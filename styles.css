@@ -308,6 +308,7 @@ body {
         background-position: center top;
         min-height: 520px;
         height: auto; /* let content define height to avoid overlap */
+        overflow: hidden; /* prevent image spill */
     }
     .hero::before {
         /* 左寄りグラデを少し広くして可読性確保 */
@@ -325,11 +326,33 @@ body {
     }
     /* スマホではテキストを先、写真を後に並べる */
     .hero-col-left { order: 1; flex-basis: auto; }
-    .hero-col-right { order: 2; }
+    .hero-col-right { order: 2; align-items: center; justify-content: center; }
     .hero-headline { font-size: 1.8rem; /* 22-28px */ }
     .hero-featurelist { align-items: center; }
     .hero-bottom-row { justify-content: center; flex-direction: column; }
-    .hero-portrait { width: min(340px, 90vw); }
+    .hero-portrait {
+        width: clamp(220px, 48vw, 300px);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    /* Monitor combo (mobile refinement) */
+    .monitor-combo-section { padding-top: 1.5rem; }
+    .combo-card { padding-top: 3rem; }
+    .combo-badge-left { left: 12px; top: 12px; font-size: 1.1rem; }
+    .combo-title { text-align: left; }
+    .combo-features { gap: 0.75rem; }
+    .combo-feature {
+        background: #f5f7f6; /* slightly stronger */
+        border: 1px solid #e2e8e4;
+        border-radius: 12px;
+        padding: 1rem 1rem;
+    }
+    .combo-to-cta { margin-top: 0.75rem; }
+    .cta-arrow { width: 64px; height: 64px; }
+    .cta-arrow-label { font-size: 1.1rem; }
+    .combo-cta { margin-top: 0.75rem; }
+    .combo-cta .btn { width: 100%; max-width: 480px; justify-content: center; }
 }
 .hero-bg {
     position: absolute;
