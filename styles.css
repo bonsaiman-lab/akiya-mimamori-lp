@@ -295,9 +295,6 @@ body {
     background: rgba(21, 107, 54, 0.95);
     color: #fff;
     padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
 }
 
 /* Mobile <= 768px */
@@ -335,6 +332,10 @@ body {
         height: auto;
         display: block;
         margin: 0 auto;
+    }
+    /* Make the circular profile bubble a bit more transparent on SP */
+    .profile-bubble {
+        background: rgba(255, 255, 255, 0.75);
     }
     /* Monitor combo (mobile refinement) */
     .monitor-combo-section { padding-top: 1.5rem; }
@@ -695,19 +696,20 @@ section {
 
 .combo-card {
     position: relative;
-    background: #ffffff;
+    background: #2c5530; /* make card green to highlight */
     border-radius: 16px;
     padding: 1.8rem 1.5rem 1.5rem;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-    border: 1px solid #e9ecef;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.2);
     max-width: 1100px;
     margin: 0 auto;
+    color: #fff; /* default text color white inside card */
 }
 
 .combo-title {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 800;
-    color: #2c5530;
+    color: #ffffff; /* title white on green */
     margin: 0 0 1rem 0;
     text-align: center;
 }
@@ -716,14 +718,15 @@ section {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #DC143C 0%, #B91C3C 100%); /* match CTA red */
+    color: #ffffff; /* white text on red */
     padding: 0.4rem 0.9rem;
     border-radius: 999px;
     font-weight: 800;
     letter-spacing: 0.02em;
     white-space: nowrap; /* avoid breaking "限定5組" */
-    box-shadow: 0 6px 16px rgba(76,175,80,0.25);
+    border: none;
+    box-shadow: 0 6px 16px rgba(220, 20, 60, 0.35);
 }
 
 /* move to left */
@@ -743,19 +746,20 @@ section {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    background: #f8f9fa;
+    background: #ffffff; /* white background for each perk */
     padding: 0.9rem 1rem;
     border-radius: 12px;
-    border: 1px solid #e9ecef;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .combo-feature i {
-    color: #4CAF50;
+    color: #2c5530; /* green icons */
 }
 
 .combo-feature span {
     font-weight: 700;
-    color: #333;
+    color: #2c5530; /* green text */
 }
 
 @media (min-width: 992px) {
